@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a Drone - OpenAIR Drone Rentals</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Color Palette */
+        :root {
+            --background-color: #E0E0E2;
+            --accent-color: #FF7F11;
+            --header-color: #B5BAD0;
+            --text-color: #000000;
+            --footer-color: #1481BA;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .header, .footer {
+            background-color: var(--header-color);
+        }
+
+        .footer {
+            background-color: var(--footer-color);
+        }
+
+        .button-accent {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .button-accent:hover {
+            background-color: #FF9B42;
+        }
+
+        /* Transition for smooth hover effects */
+        .transition-shadow {
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Drone Card Styles */
+        .drone-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .drone-card:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .drone-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+        }
+
+        .drone-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .drone-description {
+            font-size: 1rem;
+            color: #4B5563; /* Tailwind Gray-700 */
+            margin-bottom: 1rem;
+        }
+
+        .learn-more {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .learn-more:hover {
+            text-decoration: underline;
+            color: #FF9B42;
+        }
+
+        /* Filter Dropdown */
+        .filter-container {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .filter-dropdown {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .drone-image {
+                height: 150px;
+            }
+
+            .drone-title {
+                font-size: 1.25rem;
+            }
+
+            .drone-description {
+                font-size: 0.95rem;
+            }
+
+            .filter-dropdown {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-2">
+            <!-- Logo -->
+            <div class="text-2xl font-bold">
+                <a href="index.html">OpenAIR</a>
+            </div>
+            <!-- Navigation -->
+            <nav class="space-x-4 hidden md:block">
+                <a class="hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="hover:text-gray-900" href="security.html">Security</a>
+                <a class="hover:text-gray-900" href="about.html">About Us</a>
+                <a class="hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="hover:text-gray-900" href="support.html">Support</a>
+                <a class="hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+                <a class="hover:text-gray-900" href="terms.html">Terms</a>
+                <a class="hover:text-gray-900" href="user-guides.html">User Guides</a>
+                <a class="hover:text-gray-900" href="video-tutorials.html">Video Tutorials</a>
+                <a class="hover:text-gray-900" href="community-forum.html">Community Forum</a>
+            </nav>
+            <!-- Icons -->
+            <div class="flex items-center space-x-4">
+                <a class="hover:text-gray-900" href="#" aria-label="Search"><i class="fas fa-search"></i></a>
+                <a class="hover:text-gray-900" href="#" aria-label="User Account"><i class="fas fa-user"></i></a>
+                <a class="hover:text-gray-900" href="#" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a>
+                <a class="button-accent px-4 py-2 rounded" href="rent.html">Rent</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" aria-label="Toggle Menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-md">
+            <nav class="px-4 py-2 space-y-2">
+                <a class="block hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="block hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="block hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="block hover:text-gray-900" href="security.html">Security</a>
+                <a class="block hover:text-gray-900" href="about.html">About Us</a>
+                <a class="block hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="block hover:text-gray-900" href="support.html">Support</a>
+                <a class="block hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+                <a class="block hover:text-gray-900" href="terms.html">Terms</a>
+                <a class="block hover:text-gray-900" href="user-guides.html">User Guides</a>
+                <a class="block hover:text-gray-900" href="video-tutorials.html">Video Tutorials</a>
+                <a class="block hover:text-gray-900" href="community-forum.html">Community Forum</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <section class="container mx-auto py-16 px-4">
+            <h1 class="text-4xl font-bold text-center mb-8">Rent a Drone</h1>
+            <p class="text-center text-lg mb-12">Choose from our wide variety of drones and rent the one that fits your needs.</p>
+
+            <!-- Filter Dropdown -->
+            <div class="filter-container">
+                <label for="category-filter" class="mr-2 font-semibold">Filter by Category:</label>
+                <select id="category-filter" class="filter-dropdown">
+                    <option value="all">All</option>
+                    <option value="filming">Filming</option>
+                    <option value="recreational">Recreational</option>
+                    <option value="security">Security</option>
+                </select>
+            </div>
+
+            <!-- Product Section -->
+            <div id="drone-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- AIR 3 -->
+                <div class="drone-card" data-category="filming">
+                    <img src="images/air3.jpg" alt="OpenAIR AIR 3" class="drone-image">
+                    <h3 class="drone-title">OpenAIR AIR 3</h3>
+                    <p class="drone-description">Versatile drone for both professional and recreational use.</p>
+                    <a class="button-accent block text-center py-2 rounded hover:bg-orange-600" href="air3.html">Rent Now</a>
+                </div>
+
+                <!-- MAVIC 3 PRO -->
+                <div class="drone-card" data-category="filming">
+                    <img src="images/mavic3pro.jpg" alt="OpenAIR MAVIC 3 PRO" class="drone-image">
+                    <h3 class="drone-title">OpenAIR MAVIC 3 PRO</h3>
+                    <p class="drone-description">Triple-lens camera drone for high-quality aerial filming.</p>
+                    <a class="button-accent block text-center py-2 rounded hover:bg-orange-600" href="mavic3pro.html">Rent Now</a>
+                </div>
+
+                <!-- MINI 4 PRO -->
+                <div class="drone-card" data-category="filming">
+                    <img src="images/mini4pro.jpg" alt="OpenAIR MINI 4 PRO" class="drone-image">
+                    <h3 class="drone-title">OpenAIR MINI 4 PRO</h3>
+                    <p class="drone-description">Compact drone combining portability with advanced features.</p>
+                    <a class="button-accent block text-center py-2 rounded hover:bg-orange-600" href="mini4pro.html">Rent Now</a>
+                </div>
+
+                <!-- SkyQuest -->
+                <div class="drone-card" data-category="recreational">
+                    <img src="images/skyquest.jpg" alt="OpenAIR SkyQuest" class="drone-image">
+                    <h3 class="drone-title">OpenAIR SkyQuest</h3>
+                    <p class="drone-description">Perfect for adventurous flights and aerial photography.</p>
+                    <a class="button-accent block text-center py-2 rounded hover:bg-orange-600" href="skyquest.html">Rent Now</a>
+                </div>
+
+                <!-- JoyFlyer -->
+                <div class="drone-card" data-category="recreational">
+                    <img src="images/joyflyer.jpg" alt="OpenAIR JoyFlyer" class="drone-image">
+                    <h3 class="drone-title">OpenAIR JoyFlyer</h3>
+                    <p class="drone-description">User-friendly drone ideal for beginners and enthusiasts.</p>
+                    <a class="button-accent block text-center py-2 rounded hover:bg-orange-600" href="joyflyer.html">Rent Now</a>
+                </div>
+
+                <!-- BreezePro -->
+                <div class="drone-card" data-category="recreational">
+                    <img src="images/breezepro.jpg" alt="OpenAIR BreezePro" class="drone-image">
+                    <h3 class="drone-title">OpenAIR BreezePro</h3>
+                    <p class="drone-description">High-performance drone for smooth and stable flights.</p>
+                    <a class="button-accent block text-center py-2 rounded hover:bg-orange-600" href="breezepro.html">Rent Now</a>
+                </div>
+
+                <!-- Security by OpenAIR -->
+                <div class="drone-card" data-category="security">
+                    <img src="images/security-drone.jpg" alt="Security Drone by OpenAIR" class="drone-image">
+                    <h3 class="drone-title">Security by OpenAIR</h3>
+                    <p class="drone-description">Advanced drone equipped for comprehensive security surveillance.</p>
+                    <a class="button-accent block text-center py-2 rounded hover:bg-orange-600" href="security.html">Rent Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 OpenAIR. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filter Functionality
+        const filterDropdown = document.getElementById('category-filter');
+        const droneContainer = document.getElementById('drone-container');
+        const droneCards = droneContainer.getElementsByClassName('drone-card');
+
+        filterDropdown.addEventListener('change', function() {
+            const filterValue = this.value;
+
+            for (let i = 0; i < droneCards.length; i++) {
+                const category = droneCards[i].getAttribute('data-category');
+
+                if (filterValue === 'all' || category === filterValue) {
+                    droneCards[i].style.display = 'block';
+                } else {
+                    droneCards[i].style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

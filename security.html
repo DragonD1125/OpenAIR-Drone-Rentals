@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Drones - OpenAIR Drone Rentals</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Color Palette */
+        :root {
+            --background-color: #E0E0E2;
+            --accent-color: #FF7F11;
+            --header-color: #B5BAD0;
+            --text-color: #000000;
+            --footer-color: #1481BA;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .header, .footer {
+            background-color: var(--header-color);
+        }
+
+        .footer {
+            background-color: var(--footer-color);
+        }
+
+        .button-accent {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .button-accent:hover {
+            background-color: #FF9B42;
+        }
+
+        /* Transition for smooth hover effects */
+        .transition-shadow {
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Drone Card Styles */
+        .drone-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .drone-card:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .drone-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+        }
+
+        .drone-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .drone-description {
+            font-size: 1rem;
+            color: #4B5563; /* Tailwind Gray-700 */
+            margin-bottom: 1rem;
+        }
+
+        .learn-more {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .learn-more:hover {
+            text-decoration: underline;
+            color: #FF9B42;
+        }
+
+        /* Advantages Section */
+        .advantages {
+            margin-top: 2rem;
+        }
+
+        .advantages h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .advantages ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        .advantages li {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        /* Operator Equipment Section */
+        .operator-equipment {
+            margin-top: 2rem;
+        }
+
+        .operator-equipment h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .operator-equipment img {
+            display: block;
+            margin: 0 auto 1rem auto;
+            width: 300px;
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.375rem;
+        }
+
+        .operator-equipment p {
+            font-size: 1.1rem;
+            text-align: center;
+            color: #4B5563; /* Tailwind Gray-700 */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .drone-image {
+                height: 150px;
+            }
+
+            .advantages h2,
+            .operator-equipment h2 {
+                font-size: 1.75rem;
+            }
+
+            .advantages li,
+            .operator-equipment p {
+                font-size: 1rem;
+            }
+
+            .operator-equipment img {
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-2">
+            <!-- Logo -->
+            <div class="text-2xl font-bold">
+                <a href="index.html">OpenAIR</a>
+            </div>
+            <!-- Navigation -->
+            <nav class="space-x-4 hidden md:block">
+                <a class="hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="hover:text-gray-900" href="security.html">Security</a>
+                <a class="hover:text-gray-900" href="about.html">About Us</a>
+                <a class="hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="hover:text-gray-900" href="support.html">Support</a>
+                <a class="hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+                <a class="hover:text-gray-900" href="terms.html">Terms</a>
+                <a class="hover:text-gray-900" href="user-guides.html">User Guides</a>
+                <a class="hover:text-gray-900" href="video-tutorials.html">Video Tutorials</a>
+                <a class="hover:text-gray-900" href="community-forum.html">Community Forum</a>
+            </nav>
+            <!-- Icons -->
+            <div class="flex items-center space-x-4">
+                <a class="hover:text-gray-900" href="#" aria-label="Search"><i class="fas fa-search"></i></a>
+                <a class="hover:text-gray-900" href="#" aria-label="User Account"><i class="fas fa-user"></i></a>
+                <a class="hover:text-gray-900" href="#" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a>
+                <a class="button-accent px-4 py-2 rounded" href="rent.html">Rent</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" aria-label="Toggle Menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-md">
+            <nav class="px-4 py-2 space-y-2">
+                <a class="block hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="block hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="block hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="block hover:text-gray-900" href="security.html">Security</a>
+                <a class="block hover:text-gray-900" href="about.html">About Us</a>
+                <a class="block hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="block hover:text-gray-900" href="support.html">Support</a>
+                <a class="block hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+                <a class="block hover:text-gray-900" href="terms.html">Terms</a>
+                <a class="block hover:text-gray-900" href="user-guides.html">User Guides</a>
+                <a class="block hover:text-gray-900" href="video-tutorials.html">Video Tutorials</a>
+                <a class="block hover:text-gray-900" href="community-forum.html">Community Forum</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Security Drone Showcase Section -->
+        <section class="container mx-auto py-16 px-4">
+            <h1 class="text-4xl font-bold text-center mb-8">Security by OpenAIR</h1>
+            <img src="images/security-drone.jpg" alt="OpenAIR Security Drone" class="mx-auto w-full h-128 object-cover rounded mb-8">
+
+            <h2 class="text-3xl font-bold mb-4">Advanced Scanning Systems</h2>
+            <ul class="space-y-2 mb-8">
+                <li><strong>Motion Sensors:</strong> Detect and track movement with high precision.</li>
+                <li><strong>Thermal Cameras:</strong> Provide night vision and heat detection capabilities.</li>
+                <li><strong>High-Resolution Cameras:</strong> Capture detailed imagery for accurate surveillance.</li>
+                <li><strong>Real-Time Data Transmission:</strong> Stream live feeds directly to your monitoring stations.</li>
+                <li><strong>Obstacle Avoidance:</strong> Navigate complex environments safely.</li>
+            </ul>
+
+            <!-- Operator Equipment Section -->
+            <div class="operator-equipment">
+                <h2>Operator Equipment</h2>
+                <img src="images/goggles.jpg" alt="Operator Goggles for Live Video Transmission" class="mx-auto w-64 object-cover rounded mb-4">
+                <p>The operator's goggles are included in the subscription cost of the drone, providing a seamless and immersive live video transmission experience. These goggles allow for real-time monitoring and enhanced situational awareness, ensuring effective surveillance operations.</p>
+            </div>
+
+            <!-- Advantages Section -->
+            <div class="advantages">
+                <h2>Advantages of Using Drones for Security & Surveillance</h2>
+                <ul>
+                    <li><strong>Cost-Effective:</strong> Reduce the need for large security teams, cutting down on labor costs.</li>
+                    <li><strong>Wide Coverage:</strong> Monitor extensive areas that would otherwise require significant manpower.</li>
+                    <li><strong>Real-Time Monitoring:</strong> Gain instant insights and respond promptly to any incidents.</li>
+                    <li><strong>Enhanced Safety:</strong> Deploy drones in hazardous or hard-to-reach areas without risking personnel.</li>
+                    <li><strong>Scalability:</strong> Easily scale your surveillance operations by adding more drones as needed.</li>
+                </ul>
+            </div>
+
+            <!-- Rent Now Button -->
+            <a class="button-accent block text-center py-4 w-full rounded hover:bg-orange-600 mt-8" href="subscriptions.html">Rent Now</a>
+        </section>
+
+        <!-- Optional: Additional Sections -->
+        <!-- You can add more sections here, such as testimonials, galleries, or booking forms -->
+
+        <!-- Footer -->
+        <footer class="footer py-8">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-white">&copy; 2024 OpenAIR. All rights reserved.</p>
+                    <div class="space-x-4 mt-4 md:mt-0">
+                        <a href="#" aria-label="Facebook" class="text-white hover:text-gray-300"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" aria-label="Twitter" class="text-white hover:text-gray-300"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" aria-label="Instagram" class="text-white hover:text-gray-300"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" aria-label="LinkedIn" class="text-white hover:text-gray-300"><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

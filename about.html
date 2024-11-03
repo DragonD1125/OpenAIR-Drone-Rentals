@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About OpenAIR</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Color Palette */
+        :root {
+            --background-color: #E0E0E2;
+            --accent-color: #FF7F11;
+            --header-color: #B5BAD0;
+            --text-color: #000000;
+            --footer-color: #1481BA;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .header, .footer {
+            background-color: var(--header-color);
+        }
+
+        .footer {
+            background-color: var(--footer-color);
+        }
+
+        .button-accent {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .button-accent:hover {
+            background-color: #FF9B42;
+        }
+
+        /* Animations (if needed) */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .slide-up {
+            animation: slideUp 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-2">
+            <!-- Logo -->
+            <div class="text-2xl font-bold">
+                <a href="index.html">OpenAIR</a>
+            </div>
+            <!-- Navigation -->
+            <nav class="space-x-4 hidden md:block">
+                <a class="hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="hover:text-gray-900" href="security.html">Security</a>
+                <a class="hover:text-gray-900" href="about.html">About Us</a>
+                <a class="hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="hover:text-gray-900" href="support.html">Support</a>
+                <a class="hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+            </nav>
+            <!-- Icons -->
+            <div class="flex items-center space-x-4">
+                <a class="hover:text-gray-900" href="#" aria-label="Search"><i class="fas fa-search"></i></a>
+                <a class="hover:text-gray-900" href="#" aria-label="User Account"><i class="fas fa-user"></i></a>
+                <a class="hover:text-gray-900" href="#" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a>
+                <a class="button-accent px-4 py-2 rounded" href="rent.html">Rent</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" aria-label="Toggle Menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-md">
+            <nav class="px-4 py-2 space-y-2">
+                <a class="block hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="block hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="block hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="block hover:text-gray-900" href="security.html">Security</a>
+                <a class="block hover:text-gray-900" href="about.html">About Us</a>
+                <a class="block hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="block hover:text-gray-900" href="support.html">Support</a>
+                <a class="block hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- About Section -->
+        <section class="container mx-auto py-16 px-4">
+            <h1 class="text-4xl font-bold text-center mb-8">About Us</h1>
+            <div class="max-w-4xl mx-auto space-y-6 text-gray-700">
+                <p>
+                    At OpenAIR, we believe in making advanced drone technology accessible to everyone. Whether you're a professional filmmaker, a security expert, or an outdoor enthusiast, our platform offers a wide range of high-quality drones for rent. Our flexible subscription plans are designed to suit all kinds of needs, from short-term recreational use to long-term professional projects.
+                </p>
+                <p>
+                    We understand that drone technology is transforming industries, and we are here to provide the tools that help individuals and businesses unlock new possibilities. With safety and innovation at the heart of our services, OpenAIR ensures that every drone rental comes with full support, including maintenance and customer care. Our mission is to simplify access to drones, enabling creativity and practical applications to soar without limitations.
+                </p>
+                <p>
+                    Join us as we redefine the way people interact with drone technology—whether you're capturing breathtaking aerial footage, enhancing your security measures, or simply exploring the skies.
+                </p>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="bg-gray-200 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Meet Our Team</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="bg-white p-6 rounded shadow-md hover:shadow-lg transition-shadow">
+                        <img src="images/daksh.jpg" alt="Daksh Rungta" class="w-full h-64 object-cover rounded">
+                        <h3 class="text-xl font-bold mt-4">Daksh Rungta</h3>
+                        <p class="text-gray-600">Roll No: E062</p>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="bg-white p-6 rounded shadow-md hover:shadow-lg transition-shadow">
+                        <img src="images/devarsh.jpg" alt="Devarsh Raval" class="w-full h-64 object-cover rounded">
+                        <h3 class="text-xl font-bold mt-4">Devarsh Raval</h3>
+                        <p class="text-gray-600">Roll No: E063</p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="bg-white p-6 rounded shadow-md hover:shadow-lg transition-shadow">
+                        <img src="images/heytt.jpg" alt="Heytt Satra" class="w-full h-64 object-cover rounded">
+                        <h3 class="text-xl font-bold mt-4">Heytt Satra</h3>
+                        <p class="text-gray-600">Roll No: E050</p>
+                    </div>
+                    <!-- Team Member 4 -->
+                    <div class="bg-white p-6 rounded shadow-md hover:shadow-lg transition-shadow">
+                        <img src="images/parth.jpg" alt="Parth Ruparelia" class="w-full h-64 object-cover rounded">
+                        <h3 class="text-xl font-bold mt-4">Parth Ruparelia</h3>
+                        <p class="text-gray-600">Roll No: E039</p>
+                    </div>
+                    <!-- Team Member 5 -->
+                    <div class="bg-white p-6 rounded shadow-md hover:shadow-lg transition-shadow">
+                        <img src="images/rishi.jpg" alt="Rishi Kaushik" class="w-full h-64 object-cover rounded">
+                        <h3 class="text-xl font-bold mt-4">Rishi Kaushik</h3>
+                        <p class="text-gray-600">Roll No: E077</p>
+                    </div>
+                    <!-- Team Member 6 -->
+                    <div class="bg-white p-6 rounded shadow-md hover:shadow-lg transition-shadow">
+                        <img src="images/vedant.jpg" alt="Vedant Ghadge" class="w-full h-64 object-cover rounded">
+                        <h3 class="text-xl font-bold mt-4">Vedant Ghadge</h3>
+                        <p class="text-gray-600">Roll No: E071</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer py-8">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-white">&copy; 2024 OpenAIR. All rights reserved.</p>
+                    <div class="space-x-4 mt-4 md:mt-0">
+                        <a href="#" aria-label="Facebook" class="text-white hover:text-gray-300"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" aria-label="Twitter" class="text-white hover:text-gray-300"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" aria-label="Instagram" class="text-white hover:text-gray-300"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" aria-label="LinkedIn" class="text-white hover:text-gray-300"><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

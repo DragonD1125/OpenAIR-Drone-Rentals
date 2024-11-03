@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to a Drone - OpenAIR Drone Rentals</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Color Palette */
+        :root {
+            --background-color: #E0E0E2;
+            --accent-color: #FF7F11;
+            --header-color: #B5BAD0;
+            --text-color: #000000;
+            --footer-color: #1481BA;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .header, .footer {
+            background-color: var(--header-color);
+        }
+
+        .footer {
+            background-color: var(--footer-color);
+        }
+
+        .button-accent {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .button-accent:hover {
+            background-color: #FF9B42;
+        }
+
+        /* Transition for smooth hover effects */
+        .transition-shadow {
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Form Container */
+        .form-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-2">
+            <!-- Logo -->
+            <div class="text-2xl font-bold">
+                <a href="index.html">OpenAIR</a>
+            </div>
+            <!-- Navigation -->
+            <nav class="space-x-4 hidden md:block">
+                <a class="hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="hover:text-gray-900" href="security.html">Security</a>
+                <a class="hover:text-gray-900" href="about.html">About Us</a>
+                <a class="hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="hover:text-gray-900" href="support.html">Support</a>
+                <a class="hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+                <a class="hover:text-gray-900" href="terms.html">Terms</a>
+                <a class="hover:text-gray-900" href="user-guides.html">User Guides</a>
+                <a class="hover:text-gray-900" href="video-tutorials.html">Video Tutorials</a>
+                <a class="hover:text-gray-900" href="community-forum.html">Community Forum</a>
+            </nav>
+            <!-- Icons -->
+            <div class="flex items-center space-x-4">
+                <a class="hover:text-gray-900" href="#" aria-label="Search"><i class="fas fa-search"></i></a>
+                <a class="hover:text-gray-900" href="my-account.html" aria-label="User Account"><i class="fas fa-user"></i></a>
+                <a class="hover:text-gray-900" href="cart.html" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a>
+                <a class="button-accent px-4 py-2 rounded" href="rent.html">Rent</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" aria-label="Toggle Menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-md">
+            <nav class="px-4 py-2 space-y-2">
+                <a class="block hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="block hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="block hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="block hover:text-gray-900" href="security.html">Security</a>
+                <a class="block hover:text-gray-900" href="about.html">About Us</a>
+                <a class="block hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="block hover:text-gray-900" href="support.html">Support</a>
+                <a class="block hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+                <a class="block hover:text-gray-900" href="terms.html">Terms</a>
+                <a class="block hover:text-gray-900" href="user-guides.html">User Guides</a>
+                <a class="block hover:text-gray-900" href="video-tutorials.html">Video Tutorials</a>
+                <a class="block hover:text-gray-900" href="community-forum.html">Community Forum</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <section class="container mx-auto py-16 px-4">
+            <h1 class="text-4xl font-bold text-center mb-8">Subscribe to a Drone</h1>
+            <p class="text-center text-lg mb-12">Choose the perfect drone and subscription plan that fits your needs.</p>
+
+            <!-- Subscription Form -->
+            <div class="max-w-3xl mx-auto">
+                <div class="form-container">
+                    <!-- Dropdowns -->
+                    <div class="mb-6">
+                        <label for="drone-select" class="block text-lg font-medium mb-2">Select Drone:</label>
+                        <select id="drone-select" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-color">
+                            <option value="" disabled selected>-- Choose a Drone --</option>
+                            <option value="air3">OpenAIR AIR 3 (Filming)</option>
+                            <option value="mavic3pro">OpenAIR MAVIC 3 PRO (Filming)</option>
+                            <option value="mini4pro">OpenAIR MINI 4 PRO (Filming)</option>
+                            <option value="skyquest">OpenAIR SkyQuest (Recreational)</option>
+                            <option value="joyflyer">OpenAIR JoyFlyer (Recreational)</option>
+                            <option value="breezepro">OpenAIR BreezePro (Recreational)</option>
+                            <option value="security">Security by OpenAIR (Security)</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="duration-select" class="block text-lg font-medium mb-2">Select Subscription Duration:</label>
+                        <select id="duration-select" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-color" disabled>
+                            <option value="" disabled selected>-- Choose a Duration --</option>
+                        </select>
+                    </div>
+
+                    <!-- Price Display -->
+                    <div class="mb-6">
+                        <p id="price-display" class="text-2xl font-semibold text-center text-accent-color"></p>
+                    </div>
+
+                    <!-- Safety Deposit and Total Cost -->
+                    <div class="mb-6">
+                        <p id="safety-deposit" class="text-xl text-center mt-4"></p>
+                        <p id="total-cost" class="text-xl text-center mt-2"></p>
+                        <p class="text-sm text-gray-600 mt-2 text-center">
+                            The safety deposit is refundable upon inspection of the drone upon return. If the drone is in undamaged working condition, the full amount will be refunded. Otherwise, part or the entire amount may be penalized.
+                        </p>
+                    </div>
+
+                    <!-- Subscribe Button -->
+                    <div class="text-center">
+                        <a id="subscribe-button" class="button-accent px-6 py-3 rounded disabled:opacity-50 disabled:cursor-not-allowed" href="cart.html" disabled>Subscribe Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-white">&copy; 2024 OpenAIR. All rights reserved.</p>
+                <div class="space-x-4 mt-4 md:mt-0">
+                    <a href="#" aria-label="Facebook" class="text-white hover:text-gray-300"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" aria-label="Twitter" class="text-white hover:text-gray-300"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" aria-label="Instagram" class="text-white hover:text-gray-300"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" aria-label="LinkedIn" class="text-white hover:text-gray-300"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        const droneSelect = document.getElementById('drone-select');
+        const durationSelect = document.getElementById('duration-select');
+        const priceDisplay = document.getElementById('price-display');
+        const safetyDeposit = document.getElementById('safety-deposit');
+        const totalCost = document.getElementById('total-cost');
+        const subscribeButton = document.getElementById('subscribe-button');
+
+        // Drone Data
+        const drones = {
+            air3: {
+                category: 'filming',
+                prices: {
+                    '10-days': '₹25,000',
+                    'monthly': '₹30,000',
+                    'quarterly': '₹45,000',
+                    'half-yearly': '₹80,000',
+                    'annual': '₹1,50,000'
+                },
+                deposit: '₹70,000'
+            },
+            mavic3pro: {
+                category: 'filming',
+                prices: {
+                    '10-days': '₹10,000',
+                    'monthly': '₹20,000',
+                    'quarterly': '₹30,000',
+                    'half-yearly': '₹45,000',
+                    'annual': '₹60,000'
+                },
+                deposit: '₹20,000'
+            },
+            mini4pro: {
+                category: 'filming',
+                prices: {
+                    '10-days': '₹50,000',
+                    'monthly': '₹75,000',
+                    'quarterly': '₹1,65,000',
+                    'half-yearly': '₹3,00,000',
+                    'annual': '₹3,75,000'
+                },
+                deposit: '₹1,40,000'
+            },
+            skyquest: {
+                category: 'recreational',
+                prices: {
+                    '10-days': '₹2,800',
+                    'monthly': '₹4,000',
+                    'quarterly': '₹8,000',
+                    'half-yearly': '₹14,000',
+                    'annual': '₹26,000'
+                },
+                deposit: '₹8,000'
+            },
+            joyflyer: {
+                category: 'recreational',
+                prices: {
+                    '10-days': '₹1,500',
+                    'monthly': '₹2,400',
+                    'quarterly': '₹4,000',
+                    'half-yearly': '₹7,000',
+                    'annual': '₹12,000'
+                },
+                deposit: '₹4,000'
+            },
+            breezepro: {
+                category: 'recreational',
+                prices: {
+                    '10-days': '₹1,000',
+                    'monthly': '₹1,800',
+                    'quarterly': '₹3,200',
+                    'half-yearly': '₹4,000',
+                    'annual': '₹5,500'
+                },
+                deposit: '₹2,000'
+            },
+            security: {
+                category: 'security',
+                prices: {
+                    'monthly': '₹70,000',
+                    'quarterly': '₹1,50,000',
+                    'half-yearly': '₹2,75,000',
+                    'annual': '₹4,00,000'
+                },
+                deposit: '₹1,40,000'
+            }
+        };
+
+        // Duration Options
+        const durations = {
+            filming: ['10-days', 'monthly', 'quarterly', 'half-yearly', 'annual'],
+            recreational: ['10-days', 'monthly', 'quarterly', 'half-yearly', 'annual'],
+            security: ['monthly', 'quarterly', 'half-yearly', 'annual']
+        };
+
+        // Update Duration Dropdown based on Drone Selection
+        droneSelect.addEventListener('change', function() {
+            const selectedDrone = this.value;
+            const droneData = drones[selectedDrone];
+
+            // Clear previous options
+            durationSelect.innerHTML = '<option value="" disabled selected>-- Choose a Duration --</option>';
+
+            if (droneData) {
+                const category = droneData.category;
+                const availableDurations = durations[category];
+
+                availableDurations.forEach(duration => {
+                    const option = document.createElement('option');
+                    option.value = duration;
+                    // Capitalize and format duration text
+                    const durationText = duration.replace('-', ' ').replace(/\b\w/g, char => char.toUpperCase());
+                    option.textContent = durationText;
+                    durationSelect.appendChild(option);
+                });
+
+                durationSelect.disabled = false;
+                priceDisplay.textContent = '';
+                safetyDeposit.textContent = '';
+                totalCost.textContent = '';
+                subscribeButton.classList.add('disabled');
+                subscribeButton.disabled = true;
+            } else {
+                durationSelect.disabled = true;
+                priceDisplay.textContent = '';
+                safetyDeposit.textContent = '';
+                totalCost.textContent = '';
+                subscribeButton.classList.add('disabled');
+                subscribeButton.disabled = true;
+            }
+        });
+
+        // Display Price, Safety Deposit, and Total Cost based on Duration Selection
+        durationSelect.addEventListener('change', function() {
+            const selectedDrone = droneSelect.value;
+            const selectedDuration = this.value;
+
+            if (selectedDrone && selectedDuration) {
+                const droneData = drones[selectedDrone];
+                const price = droneData.prices[selectedDuration];
+                const deposit = droneData.deposit;
+
+                priceDisplay.textContent = `Subscription Cost: ${price}`;
+                safetyDeposit.textContent = `Safety Deposit: ${deposit}`;
+                // Calculate total cost
+                const priceNumber = parseInt(price.replace(/[^0-9]/g, ''));
+                const depositNumber = parseInt(deposit.replace(/[^0-9]/g, ''));
+                const total = priceNumber + depositNumber;
+                // Format total with commas
+                const totalFormatted = '₹' + total.toLocaleString('en-IN');
+                totalCost.textContent = `Total Upfront Cost: ${totalFormatted}`;
+
+                subscribeButton.classList.remove('disabled');
+                subscribeButton.disabled = false;
+            } else {
+                priceDisplay.textContent = '';
+                safetyDeposit.textContent = '';
+                totalCost.textContent = '';
+                subscribeButton.classList.add('disabled');
+                subscribeButton.disabled = true;
+            }
+        });
+    </script>
+</body>
+</html>

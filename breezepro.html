@@ -1,0 +1,140 @@
+<!-- breezepro.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAIR BreezePro - Specifications</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Color Palette */
+        :root {
+            --background-color: #E0E0E2;
+            --accent-color: #FF7F11;
+            --header-color: #B5BAD0;
+            --text-color: #000000;
+            --footer-color: #1481BA;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .header, .footer {
+            background-color: var(--header-color);
+        }
+
+        .footer {
+            background-color: var(--footer-color);
+        }
+
+        .button-accent {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .button-accent:hover {
+            background-color: #FF9B42;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-2">
+            <div class="text-2xl font-bold">
+                <a href="index.html">OpenAIR</a>
+            </div>
+            <nav class="space-x-4 hidden md:block">
+                <a class="hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="hover:text-gray-900" href="security.html">Security</a>
+                <a class="hover:text-gray-900" href="about.html">About Us</a>
+                <a class="hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="hover:text-gray-900" href="support.html">Support</a>
+                <a class="hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+            </nav>
+            <!-- Icons -->
+            <div class="flex items-center space-x-4">
+                <a class="hover:text-gray-900" href="#" aria-label="Search"><i class="fas fa-search"></i></a>
+                <a class="hover:text-gray-900" href="#" aria-label="User Account"><i class="fas fa-user"></i></a>
+                <a class="hover:text-gray-900" href="#" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a>
+                <a class="button-accent px-4 py-2 rounded" href="rent.html">Rent</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" aria-label="Toggle Menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-md">
+            <nav class="px-4 py-2 space-y-2">
+                <a class="block hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="block hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="block hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="block hover:text-gray-900" href="security.html">Security</a>
+                <a class="block hover:text-gray-900" href="about.html">About Us</a>
+                <a class="block hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="block hover:text-gray-900" href="support.html">Support</a>
+                <a class="block hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <section class="container mx-auto py-16 px-4">
+            <h1 class="text-4xl font-bold text-center mb-8">OpenAIR BreezePro</h1>
+            <img src="images/breezepro.jpg" alt="OpenAIR BreezePro" class="mx-auto w-full h-64 object-cover rounded mb-8">
+
+            <h2 class="text-3xl font-bold mb-4">Specifications</h2>
+            <ul class="space-y-2 mb-8">
+                <li><strong>Weight:</strong> 250g</li>
+                <li><strong>Camera:</strong> 1/3-inch CMOS Ultra-Wide</li>
+                <li><strong>Video Resolution:</strong> 2.7K/30fps</li>
+                <li><strong>Max Flight Time:</strong> 25 mins</li>
+                <li><strong>Max Transmission Distance:</strong> 8 km</li>
+                <li><strong>Obstacle Sensing:</strong> Forward & Backward</li>
+                <li><strong>Live Feed Transmission:</strong> Up to 8 km, 720p/30fps</li>
+            </ul>
+
+            <a class="button-accent block text-center py-4 w-full rounded hover:bg-orange-600" href="subscriptions.html">Rent Now</a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer py-8">
+            <div class="container mx-auto text-center">
+                <p>&copy; 2024 OpenAIR. All rights reserved.</p>
+                <div class="space-x-4 mt-4">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

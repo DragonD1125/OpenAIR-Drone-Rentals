@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - OpenAIR</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Color Palette */
+        :root {
+            --background-color: #E0E0E2;
+            --accent-color: #FF7F11;
+            --header-color: #B5BAD0;
+            --text-color: #000000;
+            --footer-color: #1481BA;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .header, .footer {
+            background-color: var(--header-color);
+        }
+
+        .footer {
+            background-color: var(--footer-color);
+        }
+
+        .button-accent {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .button-accent:hover {
+            background-color: #FF9B42;
+        }
+
+        /* Transition for smooth hover effects */
+        .transition-shadow {
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* FAQ Styles (if needed in future) */
+        .faq-question {
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+        }
+
+        .faq-open .faq-answer {
+            display: block;
+        }
+
+        .faq-open .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Transition for smooth toggle */
+        .faq-answer {
+            transition: max-height 0.3s ease;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-2">
+            <!-- Logo -->
+            <div class="text-2xl font-bold">
+                <a href="index.html">OpenAIR</a>
+            </div>
+            <!-- Navigation -->
+            <nav class="space-x-4 hidden md:block">
+                <a class="hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="hover:text-gray-900" href="security.html">Security</a>
+                <a class="hover:text-gray-900" href="about.html">About Us</a>
+                <a class="hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="hover:text-gray-900" href="support.html">Support</a>
+                <a class="hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+                <a class="hover:text-gray-900" href="terms.html">Terms</a>
+            </nav>
+            <!-- Icons -->
+            <div class="flex items-center space-x-4">
+                <a class="hover:text-gray-900" href="#" aria-label="Search"><i class="fas fa-search"></i></a>
+                <a class="hover:text-gray-900" href="#" aria-label="User Account"><i class="fas fa-user"></i></a>
+                <a class="hover:text-gray-900" href="#" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a>
+                <a class="button-accent px-4 py-2 rounded" href="rent.html">Rent</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" aria-label="Toggle Menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-md">
+            <nav class="px-4 py-2 space-y-2">
+                <a class="block hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="block hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="block hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="block hover:text-gray-900" href="security.html">Security</a>
+                <a class="block hover:text-gray-900" href="about.html">About Us</a>
+                <a class="block hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="block hover:text-gray-900" href="support.html">Support</a>
+                <a class="block hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+                <a class="block hover:text-gray-900" href="terms.html">Terms</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Terms and Conditions Section -->
+        <section class="container mx-auto py-16 px-4">
+            <h1 class="text-4xl font-bold text-center mb-12">Terms and Conditions</h1>
+            <div class="max-w-4xl mx-auto space-y-6 text-gray-700">
+                <p class="text-lg">
+                    Welcome to OpenAIR Drone Rentals. By accessing or using our services, you agree to be bound by the following terms and conditions. Please read them carefully.
+                </p>
+
+                <!-- Section 1: Acceptance of Terms -->
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2">1. Acceptance of Terms</h2>
+                    <p>
+                        These Terms and Conditions govern your use of the OpenAIR Drone Rentals platform, including all associated services, products, and content. By renting a drone from OpenAIR, you accept and agree to comply with these terms.
+                    </p>
+                </div>
+
+                <!-- Section 2: Rental Agreement -->
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2">2. Rental Agreement</h2>
+                    <p>
+                        OpenAIR grants you a non-exclusive, non-transferable license to use the rented drone for the duration of the rental period. All drones remain the property of OpenAIR, and you are responsible for their safekeeping and proper usage.
+                    </p>
+                </div>
+
+                <!-- Section 3: Payment and Fees -->
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2">3. Payment and Fees</h2>
+                    <p>
+                        Payment for drone rentals must be made in full at the time of booking. OpenAIR reserves the right to charge additional fees for:
+                    </p>
+                    <ul class="list-disc list-inside pl-5">
+                        <li>Late returns beyond the agreed rental period.</li>
+                        <li>Intentional damage or excessive wear and tear to the drone.</li>
+                        <li>Deemed misuse of the drone, including unauthorized modifications or operating the drone in restricted areas.</li>
+                        <li>Cancellation fees as outlined in our cancellation policy.</li>
+                    </ul>
+                </div>
+
+                <!-- Section 4: Liability Disclaimer -->
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2">4. Liability Disclaimer</h2>
+                    <p>
+                        OpenAIR is not liable for any direct, indirect, incidental, consequential, or punitive damages arising out of your use or inability to use the rented drones. This includes damages caused to external parties by the lessee during the term of the lease.
+                    </p>
+                </div>
+
+                <!-- Section 5: Maintenance and Support -->
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2">5. Maintenance and Support</h2>
+                    <p>
+                        OpenAIR ensures that every drone rental comes with full support, including routine maintenance and customer care. In the event of a malfunction or technical issue, you must contact OpenAIR immediately to arrange for repair or replacement.
+                    </p>
+                </div>
+
+                <!-- Section 6: Usage Guidelines -->
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2">6. Usage Guidelines</h2>
+                    <p>
+                        You agree to operate the drone in compliance with all applicable laws, regulations, and guidelines. This includes respecting no-fly zones, maintaining line-of-sight operation, and adhering to altitude restrictions. Failure to comply may result in termination of the rental agreement and additional charges.
+                    </p>
+                </div>
+
+                <!-- Section 7: Termination of Agreement -->
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2">7. Termination of Agreement</h2>
+                    <p>
+                        OpenAIR reserves the right to terminate your rental agreement at any time without prior notice if you breach any of these terms and conditions. Upon termination, you must immediately return the drone to OpenAIR in the same condition as received, except for normal wear and tear.
+                    </p>
+                </div>
+
+                <!-- Section 8: Governing Law -->
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2">8. Governing Law</h2>
+                    <p>
+                        These terms and conditions are governed by and construed in accordance with Indian laws. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the Indian courts.
+                    </p>
+                </div>
+
+                <!-- Section 9: Amendments -->
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2">9. Amendments</h2>
+                    <p>
+                        OpenAIR reserves the right to modify these terms and conditions at any time. Any changes will be effective immediately upon posting on the website. Your continued use of our services constitutes acceptance of the revised terms.
+                    </p>
+                </div>
+
+                <!-- Section 10: Contact Information -->
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2">10. Contact Information</h2>
+                    <p>
+                        If you have any questions or concerns about these terms and conditions, please contact us through our <a href="support.html" class="text-accent underline">Support</a> page.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer py-8">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-white">&copy; 2024 OpenAIR. All rights reserved.</p>
+                    <div class="space-x-4 mt-4 md:mt-0">
+                        <a href="#" aria-label="Facebook" class="text-white hover:text-gray-300"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" aria-label="Twitter" class="text-white hover:text-gray-300"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" aria-label="Instagram" class="text-white hover:text-gray-300"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" aria-label="LinkedIn" class="text-white hover:text-gray-300"><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

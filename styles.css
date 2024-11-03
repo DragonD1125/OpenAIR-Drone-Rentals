@@ -1,0 +1,72 @@
+/* css/styles.css */
+
+/* Color Palette */
+:root {
+    --background-color: #E0E0E2;
+    --accent-color: #FF7F11;
+    --header-color: #B5BAD0;
+    --text-color: #000000;
+    --footer-color: #1481BA;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header and Footer */
+.header, .footer {
+    background-color: var(--header-color);
+}
+
+.footer {
+    background-color: var(--footer-color);
+}
+
+/* Buttons */
+.button-accent {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.button-accent:hover {
+    background-color: #FF9B42;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-up {
+    animation: slideUp 1s ease-out;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: var(--header-color);
+}

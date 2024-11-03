@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - OpenAIR Drone Rentals</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Color Palette */
+        :root {
+            --background-color: #E0E0E2;
+            --accent-color: #FF7F11;
+            --header-color: #B5BAD0;
+            --text-color: #000000;
+            --footer-color: #1481BA;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .header, .footer {
+            background-color: var(--header-color);
+        }
+
+        .footer {
+            background-color: var(--footer-color);
+        }
+
+        .button-accent {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .button-accent:hover {
+            background-color: #FF9B42;
+        }
+
+        /* Profile Picture */
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Table Styles */
+        .table-header {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .table-row:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .table-row:hover {
+            background-color: #f1f5f9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+            }
+
+            .section-header {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-2">
+            <!-- Logo -->
+            <div class="text-2xl font-bold">
+                <a href="index.html">OpenAIR</a>
+            </div>
+            <!-- Navigation -->
+            <nav class="space-x-4 hidden md:block">
+                <a class="hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="hover:text-gray-900" href="security.html">Security</a>
+                <a class="hover:text-gray-900" href="about.html">About Us</a>
+                <a class="hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="hover:text-gray-900" href="support.html">Support</a>
+                <a class="hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+                <a class="hover:text-gray-900" href="terms.html">Terms</a>
+                <a class="hover:text-gray-900" href="user-guides.html">User Guides</a>
+                <a class="hover:text-gray-900" href="video-tutorials.html">Video Tutorials</a>
+                <a class="hover:text-gray-900" href="community-forum.html">Community Forum</a>
+            </nav>
+            <!-- Icons -->
+            <div class="flex items-center space-x-4">
+                <a class="hover:text-gray-900" href="cart.html" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a>
+                <a class="hover:text-gray-900" href="my-account.html" aria-label="User Account"><i class="fas fa-user"></i></a>
+                <a class="button-accent px-4 py-2 rounded" href="rent.html">Rent</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" aria-label="Toggle Menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-md">
+            <nav class="px-4 py-2 space-y-2">
+                <a class="block hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="block hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="block hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="block hover:text-gray-900" href="security.html">Security</a>
+                <a class="block hover:text-gray-900" href="about.html">About Us</a>
+                <a class="block hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="block hover:text-gray-900" href="support.html">Support</a>
+                <a class="block hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+                <a class="block hover:text-gray-900" href="terms.html">Terms</a>
+                <a class="block hover:text-gray-900" href="user-guides.html">User Guides</a>
+                <a class="block hover:text-gray-900" href="video-tutorials.html">Video Tutorials</a>
+                <a class="block hover:text-gray-900" href="community-forum.html">Community Forum</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <section class="container mx-auto py-16 px-4">
+            <h1 class="text-4xl font-bold text-center mb-8">My Account</h1>
+
+            <!-- Profile Section -->
+            <div class="flex flex-col items-center mb-12">
+                <img src="images/profile-placeholder.jpg" alt="User Profile Picture" class="profile-pic">
+                <h2 class="text-2xl font-semibold">John Doe</h2>
+                <p class="text-gray-700">1234 Drone Street, Aerial City, Skyland</p>
+                <a href="#" class="text-accent-color hover:underline mt-2">Edit Profile</a>
+            </div>
+
+            <!-- Past Orders Section -->
+            <div class="mb-12">
+                <h2 class="section-header">Past Orders</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white">
+                        <thead>
+                            <tr class="table-header">
+                                <th class="py-3 px-6 text-left">Drone</th>
+                                <th class="py-3 px-6 text-left">Duration</th>
+                                <th class="py-3 px-6 text-left">Rental Date</th>
+                                <th class="py-3 px-6 text-left">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example Past Order -->
+                            <tr class="table-row">
+                                <td class="py-4 px-6">OpenAIR MAVIC 3 PRO</td>
+                                <td class="py-4 px-6">Monthly</td>
+                                <td class="py-4 px-6">2024-04-15</td>
+                                <td class="py-4 px-6">Completed</td>
+                            </tr>
+                            <!-- Add more past orders as needed -->
+                            <tr class="table-row">
+                                <td class="py-4 px-6">OpenAIR AIR 3</td>
+                                <td class="py-4 px-6">Annual</td>
+                                <td class="py-4 px-6">2023-11-20</td>
+                                <td class="py-4 px-6">Completed</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="py-4 px-6">OpenAIR JoyFlyer</td>
+                                <td class="py-4 px-6">Quarterly</td>
+                                <td class="py-4 px-6">2024-02-10</td>
+                                <td class="py-4 px-6">Completed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Current Subscriptions Section -->
+            <div class="mb-12">
+                <h2 class="section-header">Current Subscriptions</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white">
+                        <thead>
+                            <tr class="table-header">
+                                <th class="py-3 px-6 text-left">Drone</th>
+                                <th class="py-3 px-6 text-left">Duration</th>
+                                <th class="py-3 px-6 text-left">Start Date</th>
+                                <th class="py-3 px-6 text-left">End Date</th>
+                                <th class="py-3 px-6 text-left">Status</th>
+                                <th class="py-3 px-6 text-left">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example Current Subscription -->
+                            <tr class="table-row">
+                                <td class="py-4 px-6">OpenAIR MINI 4 PRO</td>
+                                <td class="py-4 px-6">Half-Yearly</td>
+                                <td class="py-4 px-6">2024-05-01</td>
+                                <td class="py-4 px-6">2024-10-31</td>
+                                <td class="py-4 px-6">Active</td>
+                                <td class="py-4 px-6">
+                                    <a href="#" class="text-accent-color hover:underline">View Details</a>
+                                </td>
+                            </tr>
+                            <!-- Add more current subscriptions as needed -->
+                            <tr class="table-row">
+                                <td class="py-4 px-6">Security by OpenAIR</td>
+                                <td class="py-4 px-6">Monthly</td>
+                                <td class="py-4 px-6">2024-06-15</td>
+                                <td class="py-4 px-6">2024-07-14</td>
+                                <td class="py-4 px-6">Active</td>
+                                <td class="py-4 px-6">
+                                    <a href="#" class="text-accent-color hover:underline">View Details</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Security Deposit Information -->
+            <div class="mb-12">
+                <h2 class="section-header">Security Deposit Information</h2>
+                <p class="text-gray-700 mb-4">
+                    A refundable safety deposit is required for all drone rentals. The deposit amounts are as follows:
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mb-4">
+                    <li>OpenAIR AIR 3: ₹70,000</li>
+                    <li>OpenAIR MAVIC 3 PRO: ₹20,000</li>
+                    <li>OpenAIR MINI 4 PRO: ₹1,40,000</li>
+                    <li>OpenAIR SkyQuest: ₹8,000</li>
+                    <li>OpenAIR JoyFlyer: ₹4,000</li>
+                    <li>OpenAIR BreezePro: ₹2,000</li>
+                    <li>Security by OpenAIR: ₹1,40,000</li>
+                </ul>
+                <p class="text-gray-700">
+                    The security deposit is refundable upon inspection of the drone upon return. If the drone is in undamaged working condition, the full amount will be refunded. Otherwise, part or the entire deposit may be penalized based on the extent of the damage.
+                </p>
+            </div>
+
+            <!-- Footer CTA -->
+            <div class="text-center">
+                <a href="rent.html" class="button-accent px-6 py-3 rounded hover:bg-orange-600">Browse Drones</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-white">&copy; 2024 OpenAIR. All rights reserved.</p>
+                <div class="space-x-4 mt-4 md:mt-0">
+                    <a href="#" aria-label="Facebook" class="text-white hover:text-gray-300"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" aria-label="Twitter" class="text-white hover:text-gray-300"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" aria-label="Instagram" class="text-white hover:text-gray-300"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" aria-label="LinkedIn" class="text-white hover:text-gray-300"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

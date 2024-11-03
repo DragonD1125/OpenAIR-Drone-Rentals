@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAIR - Drone Rentals</title>
+    <meta name="description" content="Rent top-quality drones from OpenAIR for filming, security, and recreational purposes.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-2">
+            <!-- Logo -->
+            <div class="text-2xl font-bold">
+                <a href="index.html">OpenAIR</a>
+            </div>
+            <!-- Navigation -->
+            <nav class="space-x-4 hidden md:block">
+
+                <a class="hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="hover:text-gray-900" href="security.html">Security</a>
+                <a class="hover:text-gray-900" href="about.html">About Us</a>
+                <a class="hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="hover:text-gray-900" href="support.html">Support</a>
+                <a class="hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+                <a class="hover:text-gray-900" href="terms.html">Terms</a>
+                <a class="hover:text-gray-900" href="user-guides.html">User Guides</a>
+                <a class="hover:text-gray-900" href="video-tutorials.html">Video Tutorials</a>
+                <a class="hover:text-gray-900" href="community-forum.html">Community Forum</a>
+            </nav>
+            <!-- Icons -->
+            <div class="flex items-center space-x-4">
+                <a class="hover:text-gray-900" href="#" aria-label="Search"><i class="fas fa-search"></i></a>
+                <a class="hover:text-gray-900" href="my-account.html" aria-label="User Account"><i class="fas fa-user"></i></a>
+                <a class="hover:text-gray-900" href="cart.html" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a>
+                <a class="button-accent px-4 py-2 rounded" href="rent.html">Rent</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" aria-label="Toggle Menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-md">
+            <nav class="px-4 py-2 space-y-2">
+                <a class="block hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="block hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="block hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="block hover:text-gray-900" href="security.html">Security</a>
+                <a class="block hover:text-gray-900" href="about.html">About Us</a>
+                <a class="block hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="block hover:text-gray-900" href="support.html">Support</a>
+                <a class="block hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+                <a class="block hover:text-gray-900" href="terms.html">Terms</a>
+                <a class="block hover:text-gray-900" href="user-guides.html">User Guides</a>
+                <a class="block hover:text-gray-900" href="video-tutorials.html">Video Tutorials</a>
+                <a class="block hover:text-gray-900" href="community-forum.html">Community Forum</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="relative">
+            <div class="relative">
+                <img src="images/hero.jpg" alt="OpenAIR Drones" class="w-full h-screen object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+                <div class="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4">
+                    <h1 class="text-5xl font-bold fade-in">Rent Your Drone Today</h1>
+                    <p class="text-xl mt-4 fade-in">Experience the skies like never before with OpenAIR</p>
+                    <div class="mt-8 space-x-4 fade-in">
+                        <a class="button-accent px-6 py-3 rounded" href="subscriptions.html">Explore Subscriptions</a>
+                        <a class="button-accent px-6 py-3 rounded" href="rent.html">Rent Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="container mx-auto py-16 px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Top Drones</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- OpenAIR MAVIC 3 PRO -->
+                <div class="bg-white p-8 rounded shadow-md hover:shadow-xl transition-shadow duration-300 slide-up">
+                    <img src="images/mavic3pro.jpg" alt="OpenAIR MAVIC 3 PRO" class="w-full h-64 object-cover rounded" loading="lazy">
+                    <h3 class="text-xl font-bold mt-4">OpenAIR MAVIC 3 PRO</h3>
+                    <p class="text-gray-600 mt-2">Triple-Lens Camera Drone - Inspiration in Focus</p>
+                    <div class="mt-4 space-x-4">
+                        <a class="text-accent hover:underline" href="mavic3pro.html">Learn More</a>
+                        <a class="text-accent hover:underline" href="rent.html">Rent Now</a>
+                    </div>
+                </div>
+                <!-- OpenAIR MINI 4 PRO -->
+                <div class="bg-white p-8 rounded shadow-md hover:shadow-xl transition-shadow duration-300 slide-up">
+                    <img src="images/mini4pro.jpg" alt="OpenAIR MINI 4 PRO" class="w-full h-64 object-cover rounded" loading="lazy">
+                    <h3 class="text-xl font-bold mt-4">OpenAIR MINI 4 PRO</h3>
+                    <p class="text-gray-600 mt-2">All-in-One Mini Drone - Mini to the Max</p>
+                    <div class="mt-4 space-x-4">
+                        <a class="text-accent hover:underline" href="mini4pro.html">Learn More</a>
+                        <a class="text-accent hover:underline" href="rent.html">Rent Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscription Plans -->
+        <section class="bg-gray-200 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Subscription Plans</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Basic Plan -->
+                    <div class="bg-white p-8 rounded shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-4">Basic Plan</h3>
+                        <p class="text-gray-600">Ideal for hobbyists and beginners.</p>
+                        <ul class="mt-4 space-y-2">
+                            <li><i class="fas fa-check text-green-500"></i> Access to Mini Drones</li>
+                            <li><i class="fas fa-check text-green-500"></i> Monthly Maintenance</li>
+                            <li><i class="fas fa-times text-red-500"></i> Accessories Included</li>
+                        </ul>
+                       
+                        <a class="button-accent block mt-4 text-center py-2 rounded hover:bg-orange-600" href="subscriptions.html">Subscribe Now</a>
+                    </div>
+                    <!-- Standard Plan -->
+                    <div class="bg-white p-8 rounded shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-4">Standard Plan</h3>
+                        <p class="text-gray-600">Perfect for enthusiasts.</p>
+                        <ul class="mt-4 space-y-2">
+                            <li><i class="fas fa-check text-green-500"></i> Access to Standard Drones</li>
+                            <li><i class="fas fa-check text-green-500"></i> Bi-Weekly Maintenance</li>
+                            <li><i class="fas fa-check text-green-500"></i> Basic Accessories Included</li>
+                        </ul>
+                        
+                        <a class="button-accent block mt-4 text-center py-2 rounded hover:bg-orange-600" href="subscriptions.html">Subscribe Now</a>
+                    </div>
+                    <!-- Premium Plan -->
+                    <div class="bg-white p-8 rounded shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-4">Premium Plan</h3>
+                        <p class="text-gray-600">For professionals and businesses.</p>
+                        <ul class="mt-4 space-y-2">
+                            <li><i class="fas fa-check text-green-500"></i> Access to All Drones</li>
+                            <li><i class="fas fa-check text-green-500"></i> Weekly Maintenance</li>
+                            <li><i class="fas fa-check text-green-500"></i> All Accessories Included</li>
+                        </ul>
+                        
+                        <a class="button-accent block mt-4 text-center py-2 rounded hover:bg-orange-600" href="subscriptions.html">Subscribe Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer py-8 bg-footer-color text-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p>&copy; 2024 OpenAIR. All rights reserved.</p>
+                    <div class="space-x-4 mt-4 md:mt-0">
+                        <a href="#" aria-label="Facebook" class="hover:text-gray-300"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" aria-label="Twitter" class="hover:text-gray-300"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" aria-label="Instagram" class="hover:text-gray-300"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" aria-label="LinkedIn" class="hover:text-gray-300"><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Optional: Add animations or other interactivity as needed
+    </script>
+</body>
+</html>

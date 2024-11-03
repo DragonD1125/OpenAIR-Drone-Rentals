@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - OpenAIR</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Color Palette */
+        :root {
+            --background-color: #E0E0E2;
+            --accent-color: #FF7F11;
+            --header-color: #B5BAD0;
+            --text-color: #000000;
+            --footer-color: #1481BA;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .header, .footer {
+            background-color: var(--header-color);
+        }
+
+        .footer {
+            background-color: var(--footer-color);
+        }
+
+        .button-accent {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .button-accent:hover {
+            background-color: #FF9B42;
+        }
+
+        /* Form Styles */
+        .input-field {
+            @apply w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent;
+        }
+
+        .textarea-field {
+            @apply w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-2">
+            <!-- Logo -->
+            <div class="text-2xl font-bold">
+                <a href="index.html">OpenAIR</a>
+            </div>
+            <!-- Navigation -->
+            <nav class="space-x-4 hidden md:block">
+                <a class="hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="hover:text-gray-900" href="security.html">Security</a>
+                <a class="hover:text-gray-900" href="about.html">About Us</a>
+                <a class="hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="hover:text-gray-900" href="support.html">Support</a>
+                <a class="hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+                <a class="hover:text-gray-900" href="terms.html">Terms</a>
+            </nav>
+            <!-- Icons -->
+            <div class="flex items-center space-x-4">
+                <a class="hover:text-gray-900" href="#" aria-label="Search"><i class="fas fa-search"></i></a>
+                <a class="hover:text-gray-900" href="#" aria-label="User Account"><i class="fas fa-user"></i></a>
+                <a class="hover:text-gray-900" href="#" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a>
+                <a class="button-accent px-4 py-2 rounded" href="rent.html">Rent</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" aria-label="Toggle Menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-md">
+            <nav class="px-4 py-2 space-y-2">
+                <a class="block hover:text-gray-900" href="rent.html">Rent</a>
+                <a class="block hover:text-gray-900" href="filming.html">Filming</a>
+                <a class="block hover:text-gray-900" href="recreational.html">Recreational</a>
+                <a class="block hover:text-gray-900" href="security.html">Security</a>
+                <a class="block hover:text-gray-900" href="about.html">About Us</a>
+                <a class="block hover:text-gray-900" href="faqs.html">FAQs</a>
+                <a class="block hover:text-gray-900" href="support.html">Support</a>
+                <a class="block hover:text-gray-900" href="subscriptions.html">Subscriptions</a>
+                <a class="block hover:text-gray-900" href="terms.html">Terms</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Support Section -->
+        <section class="container mx-auto py-16 px-4">
+            <h1 class="text-4xl font-bold text-center mb-12">Support</h1>
+            <div class="max-w-6xl mx-auto space-y-16">
+                <!-- Contact Information -->
+                <div class="bg-white p-8 rounded shadow-md">
+                    <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+                    <p class="mb-4">If you have any questions, concerns, or need assistance, our support team is here to help you.</p>
+                    <div class="flex flex-col md:flex-row md:space-x-12">
+                        <!-- Phone -->
+                        <div class="flex items-center mb-4 md:mb-0">
+                            <i class="fas fa-phone fa-2x text-accent mr-4"></i>
+                            <div>
+                                <h3 class="text-xl font-medium">Phone</h3>
+                                <p>+1 (800) 123-4567</p>
+                            </div>
+                        </div>
+                        <!-- Email -->
+                        <div class="flex items-center mb-4 md:mb-0">
+                            <i class="fas fa-envelope fa-2x text-accent mr-4"></i>
+                            <div>
+                                <h3 class="text-xl font-medium">Email</h3>
+                                <p>support@openair.com</p>
+                            </div>
+                        </div>
+                        <!-- Live Chat -->
+                        <div class="flex items-center">
+                            <i class="fas fa-comments fa-2x text-accent mr-4"></i>
+                            <div>
+                                <h3 class="text-xl font-medium">Live Chat</h3>
+                                <p>Coming Soon</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support Ticket Form -->
+                <div class="bg-white p-8 rounded shadow-md">
+                    <h2 class="text-2xl font-semibold mb-4">Submit a Support Ticket</h2>
+                    <form action="#" method="POST" class="space-y-4">
+                        <!-- Name -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                            <input type="text" id="name" name="name" required class="input-field" placeholder="Your Name">
+                        </div>
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                            <input type="email" id="email" name="email" required class="input-field" placeholder="you@example.com">
+                        </div>
+                        <!-- Subject -->
+                        <div>
+                            <label for="subject" class="block text-sm font-medium mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="input-field" placeholder="Subject">
+                        </div>
+                        <!-- Message -->
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="textarea-field" placeholder="Your message here..."></textarea>
+                        </div>
+                        <!-- Submit Button -->
+                        <div>
+                            <button type="submit" class="button-accent px-6 py-2 rounded text-white font-medium hover:bg-orange-600 transition-colors">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Additional Resources -->
+                <div class="bg-white p-8 rounded shadow-md">
+                    <h2 class="text-2xl font-semibold mb-4">Additional Resources</h2>
+                    <p class="mb-4">Explore our comprehensive resources to help you get the most out of your drone rental experience.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><a href="faqs.html" class="text-accent underline">Frequently Asked Questions</a></li>
+                        <li><a href="user-guides.html" class="text-accent underline">User Guides</a></li>
+                        <li><a href="video-tutorials.html" class="text-accent underline">Video Tutorials</a></li>
+                        <li><a href="community-forum.html" class="text-accent underline">Community Forum</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer py-8">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-white">&copy; 2024 OpenAIR. All rights reserved.</p>
+                    <div class="space-x-4 mt-4 md:mt-0">
+                        <a href="#" aria-label="Facebook" class="text-white hover:text-gray-300"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" aria-label="Twitter" class="text-white hover:text-gray-300"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" aria-label="Instagram" class="text-white hover:text-gray-300"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" aria-label="LinkedIn" class="text-white hover:text-gray-300"><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
